@@ -93,9 +93,9 @@
 <p><span dir="auto" style="vertical-align: inherit;"><span dir="auto" style="vertical-align: inherit;"></span></span></p>
 <h1>W4</h1>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/CekN4Ui3esA" width="560"></iframe></p>
-<p></p><h1>W7</h1>
+<p>plotter用onshape繪製的版本</p><h1>W7</h1>
 <p>此處PPT簡報錄影上傳YT後的存放位置。</p>
-<h2>Webot</h2>
+<h1>Webot</h1>
 <p>Note:</p>
 <p>Soild節點代表剛體<span>，一個關節實體可以被分解成若干剛體。</span></p>
 <p><span>Webots 的物理引擎設計用於模擬剛體。設計模擬時，一個重要的步驟是將各種實體分解為單獨的剛體。</span></p>
@@ -124,4 +124,23 @@
 <p><span><span> </span></span></p>
 <p><span></span></p>
 <p><span>實作結果如下圖:</span></p>
-<p><img alt="" height="295" src="/images/螢幕擷取畫面 (40).png" width="552"/></p>
+<p><img alt="" height="295" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%20(40).png" width="552"/></p>
+<p data-end="1100" data-start="1091">在場景樹視圖中選擇第一個 Sphere 節點（Shape 的子節點）。場景樹視圖的欄位編輯器允許您輸入 DEF 字符串。 在此欄位中輸入 BALL_GEOMETRY。 選擇 boundingObject 欄位（包含第二個 Sphere 節點），通過右鍵單擊該欄位並選擇彈出上下文菜單中的「Delete」條目來清空它。 然後，選擇 boundingObject 欄位並單擊「Add」按鈕，在對話框中選擇 USE / BALL_GEOMETRY。</p>
+<p data-end="1100" data-start="1091">這樣做有兩個好處：</p>
+<ol data-end="1169" data-start="1102">
+<li data-end="1136" data-start="1102">
+<p data-end="1136" data-start="1105"><strong data-end="1115" data-start="1105">減少重複資料</strong>：同一個幾何形狀被外觀與物理邊界共用。</p>
+</li>
+<li data-end="1169" data-start="1137">
+<p data-end="1169" data-start="1140"><strong data-end="1148" data-start="1140">維護方便</strong>：改變球的半徑，只要改一次，兩邊都會更新。</p>
+</li>
+</ol>
+<p></p>
+<p><img alt="" height="751" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%20(45).png" width="263"/></p>
+<p></p>
+<p><span>實作 #7：創建第二個球，使用相同的參數，但使用 </span><a href="https://cyberbotics.com/doc/reference/shape">Shape</a><span><span> </span>節點（而不是直接使用 Sphere 節點）來實現 DEF-USE 機制。</span></p>
+<p><img alt="" height="251" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%20(48).png" width="566"/></p>
+<p></p>
+<p>具體操作:DEF第一個solid節點裡children內的shape節點</p>
+<p>接著新增solid節點，在children內USE第一個solid節點內的shape</p>
+<p>在boundingObject內在使用相同幾何體 並且增加physics屬性</p>
